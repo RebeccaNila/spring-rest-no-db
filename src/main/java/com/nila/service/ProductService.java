@@ -1,6 +1,7 @@
 package com.nila.service;
 
 import com.nila.model.Product;
+import lombok.Getter;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,13 +11,12 @@ import java.util.List;
 @Service
 public class ProductService {
 
-    List<Product> products = new ArrayList<>(Arrays.asList(new Product(101, "Iphone", 5000)
+    public List<Product> products = new ArrayList<>(Arrays.asList(new Product(101, "Iphone", 5000)
                                     ,new Product(102, "Camera", 70000)
                                     ,new Product(103, "Android", 3000)
                                 ));
 
-
-    public List<Product> getProducts(){
+    public List<Product> getProducts() {
         return products;
     }
 
@@ -58,4 +58,6 @@ public class ProductService {
 
         return index == -1 ? "No record found!" : "Successfully Deleted!";
     }
+
+
 }
